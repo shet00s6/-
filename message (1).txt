@@ -1,0 +1,57 @@
+
+var id1 = [""]
+var id2 = [""]
+var id3 = [""]
+var id4 = [""]
+var owners = [`<@${id1}> , <@${id2}> , <@${id3}> , <@${id4}>`]
+var owner = [ id1, id2, id3, id4 ]
+var admin = "برفكس الادمن تحطو هنا يا تريك";
+
+client.on("message", async message => {
+  if(message.content === admin + "owners") {
+message.channel.send(`**Owners :** ${owners}`)
+  }
+})
+
+const cmd = require("node-cmd") // فى البكدج node-cmd اوعا تنسا تعرف 
+client.on("message", async message => {
+  if(message.author.id !== owner) return;
+  if(message.content === admin + "restart") {
+    await cmd.run("refresh")
+    await message.channel.send("✅ **The bot has been restarted**")
+  }
+})
+
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!owner.includes(message.author.id)) return;
+      
+  if (message.content.startsWith(admin + 'ply')) {
+    client.user.setGame(argresult);
+      message.channel.send("**:white_check_mark: | The Playing Status Has Been Changed To : ``"
+   + `${argresult}` + "``**")
+  } else 
+  if (message.content.startsWith(admin + 'wat')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.send("**:white_check_mark: | The Watching Status Has Been Changed To : ``"
+   + `${argresult}` + "``**")
+  } else 
+  if (message.content.startsWith(admin + 'lis')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.send("**:white_check_mark: | The Listening Status Has Been Changed To : ``"
+   + `${argresult}` + "``**")
+  } else 
+  if (message.content.startsWith(admin + 'st')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/ma_besho");
+      message.channel.send("**:white_check_mark: Done "
+   + `${argresult}` + "**")
+  }
+  if (message.content.startsWith(admin + 'setname')) {
+  client.user.setUsername(argresult).then
+      message.channel.send(`Changing The Name To ..**${argresult}** `)
+} else
+if (message.content.startsWith(admin + 'setavatar')) {
+  client.user.setAvatar(argresult);
+    message.channel.send(`Changing The Avatar To :**${argresult}** `);
+}
+});

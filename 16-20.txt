@@ -1,0 +1,5 @@
+https://discord.com/api/oauth2/authorize?client_id=741293735756955648&permissions=1140326208&scope=bot 16
+https://discord.com/api/oauth2/authorize?client_id=741293776177201203&permissions=1140326208&scope=bot 17
+https://discord.com/api/oauth2/authorize?client_id=741293818044874783&permissions=1140326208&scope=bot 18
+https://discord.com/api/oauth2/authorize?client_id=741293853100998737&permissions=1140326208&scope=bot 19
+https://discord.com/api/oauth2/authorize?client_id=483845551574482954&permissions=1140326208&scope=bot 20
